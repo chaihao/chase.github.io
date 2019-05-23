@@ -12,8 +12,8 @@
         $key = $domain.'_num_sequence';
         // key 中的域 field 
         $code = $data['code'] ? $data['code'] : 'code';
-       
         $field =  $code . $date;
+        
         $id = Yii::$app->redis->hincrby($key, $field, 1);
         // 数值长度
         $length = $data['code'] ? $data['code'] : '10';
@@ -26,6 +26,8 @@
     }
  
 }
+
+
 
  
  ?>
